@@ -2368,38 +2368,6 @@ pre .javascript .function {
 #footer .visit #page-visit:hover .fa {
   color: #333;
 }
-.zhbtn {
-  display: inline-block;
-  padding: 0 20px;
-  font-size: 14px;
-  color: #228b22;
-  background: #fff;
-  border: 2px solid #228b22;
-  text-decoration: none;
-  border-radius: 2px;
-  -webkit-transition-property: background-color;
-  -moz-transition-property: background-color;
-  -ms-transition-property: background-color;
-  transition-property: background-color;
-  -webkit-transition-duration: 0.2s;
-  -moz-transition-duration: 0.2s;
-  -ms-transition-duration: 0.2s;
-  transition-duration: 0.2s;
-  -webkit-transition-timing-function: ease-in-out;
-  -moz-transition-timing-function: ease-in-out;
-  -ms-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-  -webkit-transition-delay: 0s;
-  -moz-transition-delay: 0s;
-  -ms-transition-delay: 0s;
-  transition-delay: 0s;
-  line-height: 2;
-}
-.zhbtn:hover {
-  border-color: #228b22;
-  color: #fff;
-  background: #228b22;
-}
 .share {
   padding-left: 40px;
   margin: 1em auto 0.5em;
