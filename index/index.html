@@ -1,1190 +1,361 @@
-
 <!doctype html>
 <html>
 <head>
-<base href="http://pan.httple.net/geren_fensepiaoye/" />
-
 <meta charset="utf-8">
-<title>巧巧最棒</title>
-<!-- 新 Bootstrap 核心 CSS 文件 -->
-<link href="https://blog-1255324346.cos.ap-chengdu.myqcloud.com/menu.css?q-sign-algorithm=sha1&q-ak=AKIDRI5HY6RZpI3D6F8cnzfol2vDYYRGv21t&q-sign-time=1544405211;1544407011&q-key-time=1544405211;1544407011&q-header-list=&q-url-param-list=&q-signature=1db27abc72bfe189324a1032b8c1b95012760156&x-cos-security-token=d5319979f56d95904bb954a5eef4995d8b4a91bd10001" rel="stylesheet">
+<title>星空背景动画</title>
+
+<style type="text/css">
+html,
+body {
+  padding: 0px;
+  margin: 0px;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-filter: contrast(120%);
+          filter: contrast(120%);
+  background-color: black;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(1600px at 70% 120%, rgba(33, 39, 80, 1) 10%, #020409 100%);
+}
+
+.content {
+  width: inherit;
+  height: inherit;
+}
+
+#universe {
+  width: 100%;
+  height: 100%;
+}
+
+#footerContent {
+  font-family: sans-serif;
+  font-size: 110%;
+  color: rgba(200, 220, 255, .3);
+  width: 100%;
+  position: fixed;
+  bottom: 0px;
+  padding: 20px;
+  text-align: center;
+  z-index: 20;
+}
+
+#footer {
+  position: absolute;
+  bottom: 0px;
+  height: 300px;
+  width: 100%;
+}
+
+#scene {
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  margin-left: -800px;
+}
+
+a {
+  text-decoration: none;
+  color: rgba(200, 220, 255, 1);
+  opacity: .4;
+  transition: opacity .4s ease;
+}
+
+a:hover {
+  opacity: 1;
+}
+body{ text-align:center} 
+.div{ margin:0 auto; width:400px; height:100px;padding-top:15%;font-size: 18px;} 
+
+</style>
 </head>
 <body>
-<canvas id="sakura"></canvas>
-
-<div class="btnbg">
-<div class="cs">
-<div class="htmleaf-container">
-	<nav class="animenu"> 
-	  <button class="animenu__toggle">
-		<span class="animenu__toggle__bar"></span>
-		<span class="animenu__toggle__bar"></span>
-		<span class="animenu__toggle__bar"></span>
-	  </button>
-	  <ul class="animenu__nav" style=" text-align:center">
-		<li>
-		  <a href="http://1255394075.qzone.qq.com/" target="_blank" title="我的空间">我的空间</a>
-		</li>
-		<li>
-		  <a href="http://user.qzone.qq.com/1255394075/334" title="空间留言" target="_blank">空间留言</a>
-		</li>     
-		<li style="border-right: 1px solid #444444; border-right: 0px;">
-		<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=&site=qq&menu=yes">
-		联系我吧</a>		  
-		</li>
-	  </ul>
-	</nav>
+<div class="container">
+  <div class="content">
+  	<div class="div">
+		<a href="http://1255394075.qzone.qq.com/" target="_blank"> 
+			<span>我的空间</span> <span>QQ Zone</span> 
+		</a>
+		<a href="http://wpa.qq.com/msgrd?v=3&uin=1255394075" target="_blank" style="margin-left: 50px;"> 
+			<span>联系我吧</span> <span>Contact QQ</span>
+		</a> 
+		<br><br><br><br>
+		<p style="font-size:16px;color: silver;">心有猛虎，细嗅蔷薇。<p style="font-size:16px;color: silver;">如果我从来不曾拥有过，为什么会害怕失去。<br>
+   </div>
+    <canvas id="universe"></canvas>
+    <div id="footer">
+      <svg id="scene" x="0px" y="0px" width="1600px" height="315px">
+        <path id="ground" d="M0,316.4209c0,0,157.7119-35.416,469-56c7.3833-0.4883,23.7876-3.5488,31.3335-4.0166
+                	c3.7681-0.2334,19.4302,0.9424,28.3335,0.3506c17.1494-1.1396,30.9072-4.2734,38.333-4.6836
+                	c7.5972-0.4189,18.4058,0.3799,27.6665-0.9834c5.7075-0.8408,10.1318-4.042,14.9248-4.2705
+                	c7.8369-0.373,24.5693,3.6084,34.4087,4.2705c11.0586,0.7432,15.2656-1.8135,24.3335-2.1523c10.0576-0.376,20.4629,1.3867,28.6665,0
+                	c3.5957-0.6074,4.4194,0.4209,7.7227-0.7715c1.4927-0.5391,5.8179-3.5693,6.9438-4.2432c3.8335,0.667,6.1426-1.0732,9.917-1.167
+                	c2.2739-0.0566,3.9673-0.9072,6.249-0.9609c2.2725-0.0537,5.5547-1.2383,7.8345-1.2881c2.25-0.0498,3.498,1.0352,5.7554,0.9883
+                	c2.9648-0.0615,7.9341,0.3164,10.9111,0.2607c2.2461-0.042,2.4976-0.5195,4.7505-0.5586c2.9663-0.0518,2.1045-0.5615,5.0825-0.6074
+                	c1.5811-0.0244,6.9976,0.4131,8.582,0.3896c0.8887-0.0127,2.6113,0.373,3.5015,0.3604c1.5527-0.0215,2.2739-0.4404,3.8296-0.4609
+                	c1.416-0.0186,2.0854-0.8555,3.5039-0.873c1.0835-0.0127,2.9155,0.7939,4.0005,0.7813c1.1104-0.0127,3.5542,0.4805,4.666,0.4688
+                	c1.3047-0.0137,1.2773-0.5332,2.584-0.5459c1.415-0.0137,1.165-0.4414,2.5825-0.4541c0.916-0.0078,3.499,0.3984,4.416,0.3906
+                	c1.499-0.0127,1.833,0.6221,3.3345,0.6104c1.3296-0.0098,3.8267-0.666,5.1587-0.6748c1.3335-0.0088,2.8389-0.6514,4.1743-0.6592
+                	c1.3335-0.0078,2.4971,0.6191,3.8325,0.6123c2.5518-0.0127,7.3579,0.3965,9.9175,0.3877c5.3169-0.0176,5.5796-0.4063,10.9297-0.4063
+                	c1.8379,0,6.7031,1.3184,8.3203,1.2402c2.1055-0.1016,3.7139-1.6572,5.5283-1.7969c3.9541-0.3037,7.3262-0.5732,10.5986-0.2598
+                	c6.248,0.5977,12.1973-0.8125,21.207-0.7539c1.7266,0.0107,15.7813,3.085,17.5,3.0977c3.4014,0.0254,6.6191-1.3398,9.9971-1.3066
+                	c4.1221,0.041,8.2275,1.2529,12.3369,1.3066c2.0752,0.0273,4.1543-1.1084,6.2314-1.0771c3.3662,0.0498,4.5547,1.0166,7.9346,1.0771
+                	c2.1104,0.0381,6.4063-0.834,8.5264-0.792c2.7021,0.0537,4.4766-1.6729,7.2002-1.6113c2.9277,0.0654,7.6465,3.1641,10.6074,3.2393
+                	c4.8359,0.123,8.8809-0.9854,13.832-0.8359c2.5029,0.0752,11.8818,2.0498,14.375,2.1289c1.8398,0.0586,2.499-1.2188,4.334-1.1582
+                	c2.1689,0.0713,4.5049,1.209,6.666,1.2832c2.6699,0.0908,4.3398-0.916,6.998-0.8203c3.3379,0.1201,6.0566,1.3193,9.377,1.4453
+                	c4.001,0.1514,4.7764-1.1602,8.75-1c3.1836,0.1289,16.834,1.9912,20,2.125c4.0059,0.1699,4.0029-0.9004,7.9814-0.7227
+                	c6.8594,0.3076,7.9102,1.7656,14.6855,2.0977c8.916,0.4365,23.5254-0.2432,32.293,0.2344
+                	c6.7168,0.3662,13.3896,0.7432,20.0186,1.1318C1458.8545,268.4941,1680,316.4209,1680,316.4209H0z" />
+        <path id="stone1" d="M680.3335,250.7549c7.3335,0.333,13.6665-1.2549,6-6.4609s-14.333-7.1221-18.6665,0.8359
+                	S680.3335,250.7549,680.3335,250.7549z" />
+        <path id="stone2" d="M750.5,243.1709c3.25,0,2.5-3.707-1.75-4.2285s-5,3.7285-3,4.2285S750.5,243.1709,750.5,243.1709z" />
+        <path id="stone3" d="M988.4893,243.8242c2.8857,0.3467,4.8438,1.2627,3.0107-2.0703s-7.3955,1.3555-5.2031,1.7129
+                	S988.4893,243.8242,988.4893,243.8242z" />
+        <path id="stone4" d="M697,248.9355c2.0142-0.2021,2.1665-2.0156,1-2.1816s-9.1543,1.8398-5.9937,2.6699S697,248.9355,697,248.9355z" />
+        <g id="greens" transform="translate(850, 180)">
+          <g>
+            <path d="M36.3877,59.4268C33.0576,18.9482,6.4658,4.522,6.4658,4.522s22.4834,16.1426,24.4414,54.2251
+			C32.8657,96.8311,36.3877,59.4268,36.3877,59.4268z" />
+            <path d="M41.8496,83.1641C31.1572,43.98,2.3711,34.6738,2.3711,34.6738s25.063,11.7471,33.9668,48.8271
+			C45.2441,120.5791,41.8496,83.1641,41.8496,83.1641z" />
+            <path d="M31.3955,60.7207C23.7139,25.7979,2.5381,16.9541,2.5381,16.9541s18.4165,10.9277,24.7925,43.9502
+			C33.7061,93.9258,31.3955,60.7207,31.3955,60.7207z" />
+            <path d="M40.4517,62.0068C47.9473,21.6187,25.4009,0.1914,25.4009,0.1914s18.0098,21.9634,9.7896,59.6357
+			C26.9722,97.499,40.4517,62.0068,40.4517,62.0068z" />
+            <path d="M41.9414,69.4316c13.0313-38.9565-6.3218-63.3062-6.3218-63.3062s14.7856,24.251,1.4141,60.4185
+			C23.6621,102.709,41.9414,69.4316,41.9414,69.4316z" />
+            <path d="M29.4976,87.9092c27.4097-30.5938,19.2993-60.6226,19.2993-60.6226s3.958,28.1255-22.6606,56.0249
+			C-0.4775,111.2109,29.4976,87.9092,29.4976,87.9092z" />
+            <animateTransform attributeName="transform" type="skewX" values="0;10;0" begin="0s" dur="5.5s" fill="freeze" repeatCount="indefinite" />
+            <animateMotion type="translate" values="0,0;-10,0;0,0" begin="0s" dur="5.5s" fill="freeze" repeatCount="indefinite" />
+          </g>
+          <g>
+            <path d="M34.9995,60.4189C56.0713,30.6665,46.1133,5.4014,46.1133,5.4014S52.2559,29.4746,31.6235,56.79
+			C10.9917,84.1035,34.9995,60.4189,34.9995,60.4189z" />
+            <path d="M36.3047,64.5391c28.4629-23.4443,25.3262-51.189,25.3262-51.189s-0.293,25.4971-27.6851,46.6538
+			C6.5552,81.1631,36.3047,64.5391,36.3047,64.5391z" />
+            <path d="M33.0449,70.502c31.4424-19.2637,32.1875-47.1748,32.1875-47.1748s-3.8291,25.208-33.897,42.3584
+			C1.271,82.833,33.0449,70.502,33.0449,70.502z" />
+            <path d="M13.8237,76.0244c36.5039-5.2158,48.2563-30.543,48.2563-30.543S48.5693,67.1045,14.168,70.9248
+			C-20.2324,74.749,13.8237,76.0244,13.8237,76.0244z" />
+            <animateTransform attributeName="transform" type="skewX" values="0;15;0" begin="0s" dur="5s" fill="freeze" repeatCount="indefinite" />
+            <animateMotion type="translate" values="0,0;-15,0;0,0" begin="0s" dur="5s" fill="freeze" repeatCount="indefinite" />
+          </g>
+        </g>
+        <g id="sign" transform="translate(700, 180)">
+          <polygon points="21.2168,1.1143 20.6665,1.5459 19.7593,1.4473 19.229,1.4209 18.9707,1.6274 18.6665,1.9004 17.6865,1.9219
+		37.3516,87.8877 40.8828,87.0791 	" />
+          <polygon points="45.4111,9.5537 2.4258,18.7158 1.563,18.498 1.4585,17.2114 0.8291,15.583 0.9165,14.3364 0.0908,12.6548
+		0.2085,12.0864 -0.1924,11.5308 -0.3296,9.271 43.3408,-0.0376 43.4766,0.5015 43.334,0.9629 43.6533,1.2046 43.8232,1.8784
+		43.8965,2.7754 44.2217,3.459 44.625,5.0576 45.041,7.5459 45.2637,7.5962 45.6191,9.0073 	" />
+          <polygon points="47.0078,20.8545 4.2368,29.5503 3.5933,28.5903 3.3965,26.9746 2.4683,24.5137 2.8398,24.1372 2.2676,23.7847
+		1.9834,22.7563 2.2417,22.3394 1.7388,21.8706 1.2627,20.1426 44.8281,11.2852 45.082,12.4014 45.0723,12.9517 45.3281,13.481
+		45.752,15.3369 46.0273,17.7524 46.4219,18.2803 	" />
+          <polygon points="47.666,31.168 4.7803,39.4023 4.251,37.4004 4.4429,36.1895 3.6465,35.1123 3.0142,32.7178 3.2754,32.1025
+		2.7461,31.7046 2.2676,29.8945 45.9268,21.5107 46.0762,22.2007 45.9512,22.8423 46.2783,23.1372 46.6777,24.9795 46.5234,25.4795
+		47.3027,27.8667 47.8086,30.2017 	" />
+        </g>
+        <g id="boy_1_">
+          <g id="boy">
+            <path d="M800.7324,167.6929c0,0-7.9688-6.5039-9.7197-8.041c-1.751-1.5366-7.9331-6.5039-8.7197-13.0435
+			c-0.7861-6.5396,6.0752-15.188,17.7969-16.1885c11.7207-1.0005,12.9727,1.0366,14.1514,2.7163
+			c1.1787,1.6792,5.7178,11.1494,5.0752,18.6538c-0.6445,7.5049-5.6826,10.1133-9.7559,13.3652
+			C805.4863,168.4072,800.7324,167.6929,800.7324,167.6929z" />
+            <path d="M810.7031,169.2109c-1.0723-1.3037-1.3574-2.9556-1.1426-4.0645c0.2139-1.1084-8.041,0.1128-8.8281,2.542
+			c1.6445,1.6787,0.751,3.146-0.5,4.1108c-1.25,0.9648-1.6797,1.502-1.9297,1.8237c0.0361,0.5361,0,0.9653,0,0.9653
+			s-1.4297,1.7153-2.2871,6.5396s-0.6787,6.79-0.9648,8.3267c-0.2852,1.5366-1.4648,5.9678-1.751,10.292s0,4.5742,0,4.5742
+			s1.251,1.7153,1.1436,4.0742s-1.2705,5.6099-1.2705,5.6099s0.2344,1.8945,1.8779,2.252c1.6445,0.3574,2.3594-0.6436,2.3594-0.6436
+			s1.0713,1.3223,1.75,4.0742c0.6797,2.752,0.6436,6.79,1.8945,7.9688c1.251,1.1797,1.6074,0.3223,1.6074,0.3223
+			s0.4648,3.3975-0.9277,6.6855c-1.3945,3.2881-4.1465,6.7568-4.1465,6.7568h11.0781c0,0,1.5723-3.5234-7.1113-2.2363
+			c3.252-4.0742,3.8955-6.1934,4.0391-11.125c1.8223,0.5,4.252,0.6738,4.9316-0.3271c0.5352,1.3223,2.4297,2.1787,3.3584,1.7139
+			c-0.2139,3.7168-1.0713,12.1846-1.0713,12.1846l9.0049,0.2852c0,0-0.751-3.2168-6.29-1.4307
+			c1.001-6.7891,1.3584-11.5068,1.3584-11.5068s1.3584,0.1074,1.8584-0.3926c0.5-0.501,0.6787-5.3252-0.4648-9.9346
+			c-1.1436-4.6104-0.5-4.4678-0.5-4.4678s1.75-0.8213,1.5-2.8584s-0.8574-3.6807-1.5352-5.5391
+			c0.4639-0.1074,1-0.7861-0.6797-2.7158c-0.2148-2.5015-0.9648-6.3242-0.6436-7.6465s0.2148-2.8232-0.1787-4.3599
+			c0-2.4302,0.7148-13.1509-1.25-17.0103c-1.9658-3.8594-2.5371-3.5737-2.5371-3.5737S812.5977,169.0142,810.7031,169.2109z" />
+          </g>
+          <g transform="translate(783, 122)">
+            <g>
+              <path d="M35.3506,17.9644c2.9834-3.71,5.9824-15.2095-3.1846-18.3765c2.668,3.833,1.168,5.6665,1.168,5.6665
+	S32,1.2549,28.666-0.4121c1.5,3.1665,0,5,0,5S20.5,8.9209,24.5,13.2544S35.3506,17.9644,35.3506,17.9644z" />
+              <animateTransform attributeName="transform" type="skewX" values="0;30;0" begin="0s" dur="4s" fill="freeze" repeatCount="indefinite" />
+              <animateMotion type="translate" values="0,0;-10,0;0,0" begin="0s" dur="4s" fill="freeze" repeatCount="indefinite" />
+            </g>
+            <g>
+              <path d="M27.125,6.2334c-1.8125-0.625-2.0625-1.9375-4.375-2.25c1,0.8125,1.125,1.6875,1.125,1.6875S21.5,4.3584,19.0625,3.9834
+	c1.3125,0.75,2,1.875,2,1.875s-3.25-0.75-5.875-0.75c1.125,0.3125,1.125,0.6875,1.125,0.6875S10.75,5.8584,8.6875,7.4834
+	c1,0.125,0.9375,0.6714,0.9375,0.6714s-4.25,1.5786-5.375,3.7661c0.875-0.4375-0.8125,1.8125-0.8125,1.8125s0.75,1.375-0.3125,1.125
+	S0.5,14.1084,0.5,12.5459c-0.5,2.1875,0.6924,2.5767,1.4375,3.3125c-0.0625,1-0.9375,2.6494-1.25,2.106s0.8594,0.4282,0.0547,2.4731
+	c-0.8047,2.0459-1.1533,3.7432-0.5103,6.5195s2.7056,4.5264,3.5181,6.2139s0.5-1.6875,0.5-1.6875L27.125,6.2334z" />
+            </g>
+          </g>
+        </g>
+      </svg>
+    </div>
+  </div>
 </div>
-<center>
 
-<br><br>
-<img src="https://i.loli.net/2018/12/10/5c0dbd2258735.png" id="logo">
-<br><br>
-<hr />
-<br><br>
-<p style="font-size:30px;">巧巧的空间<br><br>
-<a href="http://1255394075.qzone.qq.com/" class="btn-slide" target="_blank"> <span class="circle"><i class="fa fa-rocket"></i></span> <span class="title">我的空间</span> <span class="title-hover">QQ Zone</span> </a>
-<a href="http://wpa.qq.com/msgrd?v=3&uin=1255394075" class="btn-slide2" target="_blank"> <span class="circle2"><i class="fa fa-download"></i></span> <span class="title2">联系我吧</span> <span class="title-hover2">Contact QQ</span></a> 
-<p style="font-size:20px;">心有猛虎，细嗅蔷薇。<p style="font-size:20px;">如果我从来不曾拥有过，为什么会害怕失去。<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<div style="position:absolute;top:90%;left:50px;height:10px;width:600px;color:#E91E63;">
-
-<audio autoplay="autoplay">
-<source src="https://blog-1255324346.cos.ap-chengdu.myqcloud.com/renxi.mp3?q-sign-algorithm=sha1&q-ak=AKIDYh2q6r3Ldr0hGFlRS6u836w6ht3PX1Es&q-sign-time=1544405175;1544406975&q-key-time=1544405175;1544406975&q-header-list=&q-url-param-list=&q-signature=7b67bdd6b29d5e22653bd323faad188fc3fe0374&x-cos-security-token=5ba6a198724536f87aa4e0f4312466d97c43e26410001" type="audio/mpeg">
-    <div style="display:none">统计代码</div>
-<script type="text/javascript">
-		document.getElementById('bgaudio').play();
-</script>
-</audio>
-</div>
-
-
-<!-- sakura shader -->
-<script id="sakura_point_vsh" type="x-shader/x_vertex">
-uniform mat4 uProjection;
-uniform mat4 uModelview;
-uniform vec3 uResolution;
-uniform vec3 uOffset;
-uniform vec3 uDOF;  //x:focus distance, y:focus radius, z:max radius
-uniform vec3 uFade; //x:start distance, y:half distance, z:near fade start
-
-attribute vec3 aPosition;
-attribute vec3 aEuler;
-attribute vec2 aMisc; //x:size, y:fade
-
-varying vec3 pposition;
-varying float psize;
-varying float palpha;
-varying float pdist;
-
-//varying mat3 rotMat;
-varying vec3 normX;
-varying vec3 normY;
-varying vec3 normZ;
-varying vec3 normal;
-
-varying float diffuse;
-varying float specular;
-varying float rstop;
-varying float distancefade;
-
-void main(void) {
-    // Projection is based on vertical angle
-    vec4 pos = uModelview * vec4(aPosition + uOffset, 1.0);
-    gl_Position = uProjection * pos;
-    gl_PointSize = aMisc.x * uProjection[1][1] / -pos.z * uResolution.y * 0.5;
-    
-    pposition = pos.xyz;
-    psize = aMisc.x;
-    pdist = length(pos.xyz);
-    palpha = smoothstep(0.0, 1.0, (pdist - 0.1) / uFade.z);
-    
-    vec3 elrsn = sin(aEuler);
-    vec3 elrcs = cos(aEuler);
-    mat3 rotx = mat3(
-        1.0, 0.0, 0.0,
-        0.0, elrcs.x, elrsn.x,
-        0.0, -elrsn.x, elrcs.x
-    );
-    mat3 roty = mat3(
-        elrcs.y, 0.0, -elrsn.y,
-        0.0, 1.0, 0.0,
-        elrsn.y, 0.0, elrcs.y
-    );
-    mat3 rotz = mat3(
-        elrcs.z, elrsn.z, 0.0, 
-        -elrsn.z, elrcs.z, 0.0,
-        0.0, 0.0, 1.0
-    );
-    mat3 rotmat = rotx * roty * rotz;
-    normal = rotmat[2];
-    
-    mat3 trrotm = mat3(
-        rotmat[0][0], rotmat[1][0], rotmat[2][0],
-        rotmat[0][1], rotmat[1][1], rotmat[2][1],
-        rotmat[0][2], rotmat[1][2], rotmat[2][2]
-    );
-    normX = trrotm[0];
-    normY = trrotm[1];
-    normZ = trrotm[2];
-    
-    const vec3 lit = vec3(0.6917144638660746, 0.6917144638660746, -0.20751433915982237);
-    
-    float tmpdfs = dot(lit, normal);
-    if(tmpdfs < 0.0) {
-        normal = -normal;
-        tmpdfs = dot(lit, normal);
-    }
-    diffuse = 0.4 + tmpdfs;
-    
-    vec3 eyev = normalize(-pos.xyz);
-    if(dot(eyev, normal) > 0.0) {
-        vec3 hv = normalize(eyev + lit);
-        specular = pow(max(dot(hv, normal), 0.0), 20.0);
-    }
-    else {
-        specular = 0.0;
-    }
-    
-    rstop = clamp((abs(pdist - uDOF.x) - uDOF.y) / uDOF.z, 0.0, 1.0);
-    rstop = pow(rstop, 0.5);
-    //-0.69315 = ln(0.5)
-    distancefade = min(1.0, exp((uFade.x - pdist) * 0.69315 / uFade.y));
-}
-</script>
-<script id="sakura_point_fsh" type="x-shader/x_fragment">
-#ifdef GL_ES
-//precision mediump float;
-precision highp float;
-#endif
-
-uniform vec3 uDOF;  //x:focus distance, y:focus radius, z:max radius
-uniform vec3 uFade; //x:start distance, y:half distance, z:near fade start
-
-const vec3 fadeCol = vec3(0.08, 0.03, 0.06);
-
-varying vec3 pposition;
-varying float psize;
-varying float palpha;
-varying float pdist;
-
-//varying mat3 rotMat;
-varying vec3 normX;
-varying vec3 normY;
-varying vec3 normZ;
-varying vec3 normal;
-
-varying float diffuse;
-varying float specular;
-varying float rstop;
-varying float distancefade;
-
-float ellipse(vec2 p, vec2 o, vec2 r) {
-    vec2 lp = (p - o) / r;
-    return length(lp) - 1.0;
-}
-
-void main(void) {
-    vec3 p = vec3(gl_PointCoord - vec2(0.5, 0.5), 0.0) * 2.0;
-    vec3 d = vec3(0.0, 0.0, -1.0);
-    float nd = normZ.z; //dot(-normZ, d);
-    if(abs(nd) < 0.0001) discard;
-    
-    float np = dot(normZ, p);
-    vec3 tp = p + d * np / nd;
-    vec2 coord = vec2(dot(normX, tp), dot(normY, tp));
-    
-    //angle = 15 degree
-    const float flwrsn = 0.258819045102521;
-    const float flwrcs = 0.965925826289068;
-    mat2 flwrm = mat2(flwrcs, -flwrsn, flwrsn, flwrcs);
-    vec2 flwrp = vec2(abs(coord.x), coord.y) * flwrm;
-    
-    float r;
-    if(flwrp.x < 0.0) {
-        r = ellipse(flwrp, vec2(0.065, 0.024) * 0.5, vec2(0.36, 0.96) * 0.5);
-    }
-    else {
-        r = ellipse(flwrp, vec2(0.065, 0.024) * 0.5, vec2(0.58, 0.96) * 0.5);
-    }
-    
-    if(r > rstop) discard;
-    
-    vec3 col = mix(vec3(1.0, 0.8, 0.75), vec3(1.0, 0.9, 0.87), r);
-    float grady = mix(0.0, 1.0, pow(coord.y * 0.5 + 0.5, 0.35));
-    col *= vec3(1.0, grady, grady);
-    col *= mix(0.8, 1.0, pow(abs(coord.x), 0.3));
-    col = col * diffuse + specular;
-    
-    col = mix(fadeCol, col, distancefade);
-    
-    float alpha = (rstop > 0.001)? (0.5 - r / (rstop * 2.0)) : 1.0;
-    alpha = smoothstep(0.0, 1.0, alpha) * palpha;
-    
-    gl_FragColor = vec4(col * 0.5, alpha);
-}
-</script>
-<!-- effects -->
-<script id="fx_common_vsh" type="x-shader/x_vertex">
-uniform vec3 uResolution;
-attribute vec2 aPosition;
-
-varying vec2 texCoord;
-varying vec2 screenCoord;
-
-void main(void) {
-    gl_Position = vec4(aPosition, 0.0, 1.0);
-    texCoord = aPosition.xy * 0.5 + vec2(0.5, 0.5);
-    screenCoord = aPosition.xy * vec2(uResolution.z, 1.0);
-}
-</script>
-<script id="bg_fsh" type="x-shader/x_fragment">
-#ifdef GL_ES
-//precision mediump float;
-precision highp float;
-#endif
-
-uniform vec2 uTimes;
-
-varying vec2 texCoord;
-varying vec2 screenCoord;
-
-void main(void) {
-    vec3 col;
-    float c;
-    vec2 tmpv = texCoord * vec2(0.8, 1.0) - vec2(0.95, 1.0);
-    c = exp(-pow(length(tmpv) * 1.8, 2.0));
-    col = mix(vec3(0.02, 0.0, 0.03), vec3(0.96, 0.98, 1.0) * 1.5, c);
-    gl_FragColor = vec4(col * 0.5, 1.0);
-}
-</script>
-<script id="fx_brightbuf_fsh" type="x-shader/x_fragment">
-#ifdef GL_ES
-//precision mediump float;
-precision highp float;
-#endif
-uniform sampler2D uSrc;
-uniform vec2 uDelta;
-
-varying vec2 texCoord;
-varying vec2 screenCoord;
-
-void main(void) {
-    vec4 col = texture2D(uSrc, texCoord);
-    gl_FragColor = vec4(col.rgb * 2.0 - vec3(0.5), 1.0);
-}
-</script>
-<script id="fx_dirblur_r4_fsh" type="x-shader/x_fragment">
-#ifdef GL_ES
-//precision mediump float;
-precision highp float;
-#endif
-uniform sampler2D uSrc;
-uniform vec2 uDelta;
-uniform vec4 uBlurDir; //dir(x, y), stride(z, w)
-
-varying vec2 texCoord;
-varying vec2 screenCoord;
-
-void main(void) {
-    vec4 col = texture2D(uSrc, texCoord);
-    col = col + texture2D(uSrc, texCoord + uBlurDir.xy * uDelta);
-    col = col + texture2D(uSrc, texCoord - uBlurDir.xy * uDelta);
-    col = col + texture2D(uSrc, texCoord + (uBlurDir.xy + uBlurDir.zw) * uDelta);
-    col = col + texture2D(uSrc, texCoord - (uBlurDir.xy + uBlurDir.zw) * uDelta);
-    gl_FragColor = col / 5.0;
-}
-</script>
-<!-- effect fragment shader template -->
-<script id="fx_common_fsh" type="x-shader/x_fragment">
-#ifdef GL_ES
-//precision mediump float;
-precision highp float;
-#endif
-uniform sampler2D uSrc;
-uniform vec2 uDelta;
-
-varying vec2 texCoord;
-varying vec2 screenCoord;
-
-void main(void) {
-    gl_FragColor = texture2D(uSrc, texCoord);
-}
-</script>
-<!-- post processing -->
-<script id="pp_final_vsh" type="x-shader/x_vertex">
-uniform vec3 uResolution;
-attribute vec2 aPosition;
-varying vec2 texCoord;
-varying vec2 screenCoord;
-void main(void) {
-    gl_Position = vec4(aPosition, 0.0, 1.0);
-    texCoord = aPosition.xy * 0.5 + vec2(0.5, 0.5);
-    screenCoord = aPosition.xy * vec2(uResolution.z, 1.0);
-}
-</script>
-<script id="pp_final_fsh" type="x-shader/x_fragment">
-#ifdef GL_ES
-//precision mediump float;
-precision highp float;
-#endif
-uniform sampler2D uSrc;
-uniform sampler2D uBloom;
-uniform vec2 uDelta;
-varying vec2 texCoord;
-varying vec2 screenCoord;
-void main(void) {
-    vec4 srccol = texture2D(uSrc, texCoord) * 2.0;
-    vec4 bloomcol = texture2D(uBloom, texCoord);
-    vec4 col;
-    col = srccol + bloomcol * (vec4(1.0) + srccol);
-    col *= smoothstep(1.0, 0.0, pow(length((texCoord - vec2(0.5)) * 2.0), 1.2) * 0.5);
-    col = pow(col, vec4(0.45454545454545)); //(1.0 / 2.2)
-    
-    gl_FragColor = vec4(col.rgb, 1.0);
-    gl_FragColor.a = 1.0;
-}
-</script>
-</body>
 <script>
-// Utilities
-var Vector3 = {};
-var Matrix44 = {};
-Vector3.create = function(x, y, z) {
-    return {'x':x, 'y':y, 'z':z};
-};
-Vector3.dot = function (v0, v1) {
-    return v0.x * v1.x + v0.y * v1.y + v0.z * v1.z;
-};
-Vector3.cross = function (v, v0, v1) {
-    v.x = v0.y * v1.z - v0.z * v1.y;
-    v.y = v0.z * v1.x - v0.x * v1.z;
-    v.z = v0.x * v1.y - v0.y * v1.x;
-};
-Vector3.normalize = function (v) {
-    var l = v.x * v.x + v.y * v.y + v.z * v.z;
-    if(l > 0.00001) {
-        l = 1.0 / Math.sqrt(l);
-        v.x *= l;
-        v.y *= l;
-        v.z *= l;
+window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
+  window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+
+var starDensity = .216;
+var speedCoeff = .05;
+var width;
+var height;
+var starCount;
+var circleRadius;
+var circleCenter;
+var first = true;
+var giantColor = '180,184,240';
+var starColor = '226,225,142';
+var cometColor = '226,225,224';
+var canva = document.getElementById('universe');
+var stars = [];
+
+windowResizeHandler();
+window.addEventListener('resize', windowResizeHandler, false);
+
+createUniverse();
+
+function createUniverse() {
+  universe = canva.getContext('2d');
+
+  for (var i = 0; i < starCount; i++) {
+    stars[i] = new Star();
+    stars[i].reset();
+  }
+
+  draw();
+}
+
+function draw() {
+  universe.clearRect(0, 0, width, height);
+
+  var starsLength = stars.length;
+
+  for (var i = 0; i < starsLength; i++) {
+    var star = stars[i];
+    star.move();
+    star.fadeIn();
+    star.fadeOut();
+    star.draw();
+  }
+
+  window.requestAnimationFrame(draw);
+}
+
+function Star() {
+
+  this.reset = function() {
+    this.giant = getProbability(3);
+    this.comet = this.giant || first ? false : getProbability(10);
+    this.x = getRandInterval(0, width - 10);
+    this.y = getRandInterval(0, height);
+    this.r = getRandInterval(1.1, 2.6);
+    this.dx = getRandInterval(speedCoeff, 6 * speedCoeff) + (this.comet + 1 - 1) * speedCoeff * getRandInterval(50, 120) + speedCoeff * 2;
+    this.dy = -getRandInterval(speedCoeff, 6 * speedCoeff) - (this.comet + 1 - 1) * speedCoeff * getRandInterval(50, 120);
+    this.fadingOut = null;
+    this.fadingIn = true;
+    this.opacity = 0;
+    this.opacityTresh = getRandInterval(.2, 1 - (this.comet + 1 - 1) * .4);
+    this.do = getRandInterval(0.0005, 0.002) + (this.comet + 1 - 1) * .001;
+  };
+
+  this.fadeIn = function() {
+    if (this.fadingIn) {
+      this.fadingIn = this.opacity > this.opacityTresh ? false : true;
+      this.opacity += this.do;
     }
-};
-Vector3.arrayForm = function(v) {
-    if(v.array) {
-        v.array[0] = v.x;
-        v.array[1] = v.y;
-        v.array[2] = v.z;
+  };
+
+  this.fadeOut = function() {
+    if (this.fadingOut) {
+      this.fadingOut = this.opacity < 0 ? false : true;
+      this.opacity -= this.do / 2;
+      if (this.x > width || this.y < 0) {
+        this.fadingOut = false;
+        this.reset();
+      }
     }
-    else {
-        v.array = new Float32Array([v.x, v.y, v.z]);
+  };
+
+  this.draw = function() {
+    universe.beginPath();
+
+    if (this.giant) {
+      universe.fillStyle = 'rgba(' + giantColor + ',' + this.opacity + ')';
+      universe.arc(this.x, this.y, 2, 0, 2 * Math.PI, false);
+    } else if (this.comet) {
+      universe.fillStyle = 'rgba(' + cometColor + ',' + this.opacity + ')';
+      universe.arc(this.x, this.y, 1.5, 0, 2 * Math.PI, false);
+
+      //comet tail
+      for (var i = 0; i < 30; i++) {
+        universe.fillStyle = 'rgba(' + cometColor + ',' + (this.opacity - (this.opacity / 20) * i) + ')';
+        universe.rect(this.x - this.dx / 4 * i, this.y - this.dy / 4 * i - 2, 2, 2);
+        universe.fill();
+      }
+    } else {
+      universe.fillStyle = 'rgba(' + starColor + ',' + this.opacity + ')';
+      universe.rect(this.x, this.y, this.r, this.r);
     }
-    return v.array;
-};
-Matrix44.createIdentity = function () {
-    return new Float32Array([1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0]);
-};
-Matrix44.loadProjection = function (m, aspect, vdeg, near, far) {
-    var h = near * Math.tan(vdeg * Math.PI / 180.0 * 0.5) * 2.0;
-    var w = h * aspect;
-    
-    m[0] = 2.0 * near / w;
-    m[1] = 0.0;
-    m[2] = 0.0;
-    m[3] = 0.0;
-    
-    m[4] = 0.0;
-    m[5] = 2.0 * near / h;
-    m[6] = 0.0;
-    m[7] = 0.0;
-    
-    m[8] = 0.0;
-    m[9] = 0.0;
-    m[10] = -(far + near) / (far - near);
-    m[11] = -1.0;
-    
-    m[12] = 0.0;
-    m[13] = 0.0;
-    m[14] = -2.0 * far * near / (far - near);
-    m[15] = 0.0;
-};
-Matrix44.loadLookAt = function (m, vpos, vlook, vup) {
-    var frontv = Vector3.create(vpos.x - vlook.x, vpos.y - vlook.y, vpos.z - vlook.z);
-    Vector3.normalize(frontv);
-    var sidev = Vector3.create(1.0, 0.0, 0.0);
-    Vector3.cross(sidev, vup, frontv);
-    Vector3.normalize(sidev);
-    var topv = Vector3.create(1.0, 0.0, 0.0);
-    Vector3.cross(topv, frontv, sidev);
-    Vector3.normalize(topv);
-    
-    m[0] = sidev.x;
-    m[1] = topv.x;
-    m[2] = frontv.x;
-    m[3] = 0.0;
-    
-    m[4] = sidev.y;
-    m[5] = topv.y;
-    m[6] = frontv.y;
-    m[7] = 0.0;
-    
-    m[8] = sidev.z;
-    m[9] = topv.z;
-    m[10] = frontv.z;
-    m[11] = 0.0;
-    
-    m[12] = -(vpos.x * m[0] + vpos.y * m[4] + vpos.z * m[8]);
-    m[13] = -(vpos.x * m[1] + vpos.y * m[5] + vpos.z * m[9]);
-    m[14] = -(vpos.x * m[2] + vpos.y * m[6] + vpos.z * m[10]);
-    m[15] = 1.0;
-};
 
-//
-var timeInfo = {
-    'start':0, 'prev':0, // Date
-    'delta':0, 'elapsed':0 // Number(sec)
-};
+    universe.closePath();
+    universe.fill();
+  };
 
-//
-var gl;
-var renderSpec = {
-    'width':0,
-    'height':0,
-    'aspect':1,
-    'array':new Float32Array(3),
-    'halfWidth':0,
-    'halfHeight':0,
-    'halfArray':new Float32Array(3)
-    // and some render targets. see setViewport()
-};
-renderSpec.setSize = function(w, h) {
-    renderSpec.width = w;
-    renderSpec.height = h;
-    renderSpec.aspect = renderSpec.width / renderSpec.height;
-    renderSpec.array[0] = renderSpec.width;
-    renderSpec.array[1] = renderSpec.height;
-    renderSpec.array[2] = renderSpec.aspect;
-    
-    renderSpec.halfWidth = Math.floor(w / 2);
-    renderSpec.halfHeight = Math.floor(h / 2);
-    renderSpec.halfArray[0] = renderSpec.halfWidth;
-    renderSpec.halfArray[1] = renderSpec.halfHeight;
-    renderSpec.halfArray[2] = renderSpec.halfWidth / renderSpec.halfHeight;
-};
-
-function deleteRenderTarget(rt) {
-    gl.deleteFramebuffer(rt.frameBuffer);
-    gl.deleteRenderbuffer(rt.renderBuffer);
-    gl.deleteTexture(rt.texture);
-}
-
-function createRenderTarget(w, h) {
-    var ret = {
-        'width':w,
-        'height':h,
-        'sizeArray':new Float32Array([w, h, w / h]),
-        'dtxArray':new Float32Array([1.0 / w, 1.0 / h])
-    };
-    ret.frameBuffer = gl.createFramebuffer();
-    ret.renderBuffer = gl.createRenderbuffer();
-    ret.texture = gl.createTexture();
-    
-    gl.bindTexture(gl.TEXTURE_2D, ret.texture);
-    gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, w, h, 0, gl.RGBA, gl.UNSIGNED_BYTE, null);
-    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
-    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
-    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
-    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
-    
-    gl.bindFramebuffer(gl.FRAMEBUFFER, ret.frameBuffer);
-    gl.framebufferTexture2D(gl.FRAMEBUFFER, gl.COLOR_ATTACHMENT0, gl.TEXTURE_2D, ret.texture, 0);
-    
-    gl.bindRenderbuffer(gl.RENDERBUFFER, ret.renderBuffer);
-    gl.renderbufferStorage(gl.RENDERBUFFER, gl.DEPTH_COMPONENT16, w, h);
-    gl.framebufferRenderbuffer(gl.FRAMEBUFFER, gl.DEPTH_ATTACHMENT, gl.RENDERBUFFER, ret.renderBuffer);
-    
-    gl.bindTexture(gl.TEXTURE_2D, null);
-    gl.bindRenderbuffer(gl.RENDERBUFFER, null);
-    gl.bindFramebuffer(gl.FRAMEBUFFER, null);
-    
-    return ret;
-}
-
-function compileShader(shtype, shsrc) {
-	var retsh = gl.createShader(shtype);
-	
-	gl.shaderSource(retsh, shsrc);
-	gl.compileShader(retsh);
-	
-	if(!gl.getShaderParameter(retsh, gl.COMPILE_STATUS)) {
-		var errlog = gl.getShaderInfoLog(retsh);
-		gl.deleteShader(retsh);
-		console.error(errlog);
-		return null;
-	}
-	return retsh;
-}
-
-function createShader(vtxsrc, frgsrc, uniformlist, attrlist) {
-    var vsh = compileShader(gl.VERTEX_SHADER, vtxsrc);
-    var fsh = compileShader(gl.FRAGMENT_SHADER, frgsrc);
-    
-    if(vsh == null || fsh == null) {
-        return null;
+  this.move = function() {
+    this.x += this.dx;
+    this.y += this.dy;
+    if (this.fadingOut === false) {
+      this.reset();
     }
-    
-    var prog = gl.createProgram();
-    gl.attachShader(prog, vsh);
-    gl.attachShader(prog, fsh);
-    
-    gl.deleteShader(vsh);
-    gl.deleteShader(fsh);
-    
-    gl.linkProgram(prog);
-    if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) {
-        var errlog = gl.getProgramInfoLog(prog);
-        console.error(errlog);
-        return null;
+    if (this.x > width - (width / 4) || this.y < 0) {
+      this.fadingOut = true;
     }
-    
-    if(uniformlist) {
-        prog.uniforms = {};
-        for(var i = 0; i < uniformlist.length; i++) {
-            prog.uniforms[uniformlist[i]] = gl.getUniformLocation(prog, uniformlist[i]);
-        }
-    }
-    
-    if(attrlist) {
-        prog.attributes = {};
-        for(var i = 0; i < attrlist.length; i++) {
-            var attr = attrlist[i];
-            prog.attributes[attr] = gl.getAttribLocation(prog, attr);
-        }
-    }
-    
-    return prog;
+  };
+
+  (function() {
+    setTimeout(function() {
+      first = false;
+    }, 50)
+  })()
 }
 
-function useShader(prog) {
-    gl.useProgram(prog);
-    for(var attr in prog.attributes) {
-        gl.enableVertexAttribArray(prog.attributes[attr]);;
-    }
+function getProbability(percents) {
+  return ((Math.floor(Math.random() * 1000) + 1) < percents * 10);
 }
 
-function unuseShader(prog) {
-    for(var attr in prog.attributes) {
-        gl.disableVertexAttribArray(prog.attributes[attr]);;
-    }
-    gl.useProgram(null);
+function getRandInterval(min, max) {
+  return (Math.random() * (max - min) + min);
 }
 
-/////
-var projection = {
-    'angle':60,
-    'nearfar':new Float32Array([0.1, 100.0]),
-    'matrix':Matrix44.createIdentity()
-};
-var camera = {
-    'position':Vector3.create(0, 0, 100),
-    'lookat':Vector3.create(0, 0, 0),
-    'up':Vector3.create(0, 1, 0),
-    'dof':Vector3.create(10.0, 4.0, 8.0),
-    'matrix':Matrix44.createIdentity()
-};
+function windowResizeHandler() {
+  width = window.innerWidth;
+  height = window.innerHeight;
+  starCount = width * starDensity;
+  circleRadius = (width > height ? height / 2 : width / 2);
+  circleCenter = {
+    x: width / 2,
+    y: height / 2
+  }
 
-var pointFlower = {};
-var meshFlower = {};
-var sceneStandBy = false;
+  canva.setAttribute('width', width);
+  canva.setAttribute('height', height);
+}</script>
 
-var BlossomParticle = function () {
-    this.velocity = new Array(3);
-    this.rotation = new Array(3);
-    this.position = new Array(3);
-    this.euler = new Array(3);
-    this.size = 1.0;
-    this.alpha = 1.0;
-    this.zkey = 0.0;
-};
-
-BlossomParticle.prototype.setVelocity = function (vx, vy, vz) {
-    this.velocity[0] = vx;
-    this.velocity[1] = vy;
-    this.velocity[2] = vz;
-};
-
-BlossomParticle.prototype.setRotation = function (rx, ry, rz) {
-    this.rotation[0] = rx;
-    this.rotation[1] = ry;
-    this.rotation[2] = rz;
-};
-
-BlossomParticle.prototype.setPosition = function (nx, ny, nz) {
-    this.position[0] = nx;
-    this.position[1] = ny;
-    this.position[2] = nz;
-};
-
-BlossomParticle.prototype.setEulerAngles = function (rx, ry, rz) {
-    this.euler[0] = rx;
-    this.euler[1] = ry;
-    this.euler[2] = rz;
-};
-
-BlossomParticle.prototype.setSize = function (s) {
-    this.size = s;
-};
-
-BlossomParticle.prototype.update = function (dt, et) {
-    this.position[0] += this.velocity[0] * dt;
-    this.position[1] += this.velocity[1] * dt;
-    this.position[2] += this.velocity[2] * dt;
-    
-    this.euler[0] += this.rotation[0] * dt;
-    this.euler[1] += this.rotation[1] * dt;
-    this.euler[2] += this.rotation[2] * dt;
-};
-
-function createPointFlowers() {
-    // get point sizes
-    var prm = gl.getParameter(gl.ALIASED_POINT_SIZE_RANGE);
-    renderSpec.pointSize = {'min':prm[0], 'max':prm[1]};
-    
-    var vtxsrc = document.getElementById("sakura_point_vsh").textContent;
-    var frgsrc = document.getElementById("sakura_point_fsh").textContent;
-    
-    pointFlower.program = createShader(
-        vtxsrc, frgsrc,
-        ['uProjection', 'uModelview', 'uResolution', 'uOffset', 'uDOF', 'uFade'],
-        ['aPosition', 'aEuler', 'aMisc']
-    );
-    
-    useShader(pointFlower.program);
-    pointFlower.offset = new Float32Array([0.0, 0.0, 0.0]);
-    pointFlower.fader = Vector3.create(0.0, 10.0, 0.0);
-    
-    // paramerters: velocity[3], rotate[3]
-    pointFlower.numFlowers = 1600;
-    pointFlower.particles = new Array(pointFlower.numFlowers);
-    // vertex attributes {position[3], euler_xyz[3], size[1]}
-    pointFlower.dataArray = new Float32Array(pointFlower.numFlowers * (3 + 3 + 2));
-    pointFlower.positionArrayOffset = 0;
-    pointFlower.eulerArrayOffset = pointFlower.numFlowers * 3;
-    pointFlower.miscArrayOffset = pointFlower.numFlowers * 6;
-    
-    pointFlower.buffer = gl.createBuffer();
-    gl.bindBuffer(gl.ARRAY_BUFFER, pointFlower.buffer);
-    gl.bufferData(gl.ARRAY_BUFFER, pointFlower.dataArray, gl.DYNAMIC_DRAW);
-    gl.bindBuffer(gl.ARRAY_BUFFER, null);
-    
-    unuseShader(pointFlower.program);
-    
-    for(var i = 0; i < pointFlower.numFlowers; i++) {
-        pointFlower.particles[i] = new BlossomParticle();
-    }
-}
-
-function initPointFlowers() {
-    //area
-    pointFlower.area = Vector3.create(20.0, 20.0, 20.0);
-    pointFlower.area.x = pointFlower.area.y * renderSpec.aspect;
-    
-    pointFlower.fader.x = 10.0; //env fade start
-    pointFlower.fader.y = pointFlower.area.z; //env fade half
-    pointFlower.fader.z = 0.1;  //near fade start
-    
-    //particles
-    var PI2 = Math.PI * 2.0;
-    var tmpv3 = Vector3.create(0, 0, 0);
-    var tmpv = 0;
-    var symmetryrand = function() {return (Math.random() * 2.0 - 1.0);};
-    for(var i = 0; i < pointFlower.numFlowers; i++) {
-        var tmpprtcl = pointFlower.particles[i];
-        
-        //velocity
-        tmpv3.x = symmetryrand() * 0.3 + 0.8;
-        tmpv3.y = symmetryrand() * 0.2 - 1.0;
-        tmpv3.z = symmetryrand() * 0.3 + 0.5;
-        Vector3.normalize(tmpv3);
-        tmpv = 2.0 + Math.random() * 1.0;
-        tmpprtcl.setVelocity(tmpv3.x * tmpv, tmpv3.y * tmpv, tmpv3.z * tmpv);
-        
-        //rotation
-        tmpprtcl.setRotation(
-            symmetryrand() * PI2 * 0.5,
-            symmetryrand() * PI2 * 0.5,
-            symmetryrand() * PI2 * 0.5
-        );
-        
-        //position
-        tmpprtcl.setPosition(
-            symmetryrand() * pointFlower.area.x,
-            symmetryrand() * pointFlower.area.y,
-            symmetryrand() * pointFlower.area.z
-        );
-        
-        //euler
-        tmpprtcl.setEulerAngles(
-            Math.random() * Math.PI * 2.0,
-            Math.random() * Math.PI * 2.0,
-            Math.random() * Math.PI * 2.0
-        );
-        
-        //size
-        tmpprtcl.setSize(0.9 + Math.random() * 0.1);
-    }
-}
-
-function renderPointFlowers() {
-    //update
-    var PI2 = Math.PI * 2.0;
-    var limit = [pointFlower.area.x, pointFlower.area.y, pointFlower.area.z];
-    var repeatPos = function (prt, cmp, limit) {
-        if(Math.abs(prt.position[cmp]) - prt.size * 0.5 > limit) {
-            //out of area
-            if(prt.position[cmp] > 0) {
-                prt.position[cmp] -= limit * 2.0;
-            }
-            else {
-                prt.position[cmp] += limit * 2.0;
-            }
-        }
-    };
-    var repeatEuler = function (prt, cmp) {
-        prt.euler[cmp] = prt.euler[cmp] % PI2;
-        if(prt.euler[cmp] < 0.0) {
-            prt.euler[cmp] += PI2;
-        }
-    };
-    
-    for(var i = 0; i < pointFlower.numFlowers; i++) {
-        var prtcl = pointFlower.particles[i];
-        prtcl.update(timeInfo.delta, timeInfo.elapsed);
-        repeatPos(prtcl, 0, pointFlower.area.x);
-        repeatPos(prtcl, 1, pointFlower.area.y);
-        repeatPos(prtcl, 2, pointFlower.area.z);
-        repeatEuler(prtcl, 0);
-        repeatEuler(prtcl, 1);
-        repeatEuler(prtcl, 2);
-        
-        prtcl.alpha = 1.0;//(pointFlower.area.z - prtcl.position[2]) * 0.5;
-        
-        prtcl.zkey = (camera.matrix[2] * prtcl.position[0]
-                    + camera.matrix[6] * prtcl.position[1]
-                    + camera.matrix[10] * prtcl.position[2]
-                    + camera.matrix[14]);
-    }
-    
-    // sort
-    pointFlower.particles.sort(function(p0, p1){return p0.zkey - p1.zkey;});
-    
-    // update data
-    var ipos = pointFlower.positionArrayOffset;
-    var ieuler = pointFlower.eulerArrayOffset;
-    var imisc = pointFlower.miscArrayOffset;
-    for(var i = 0; i < pointFlower.numFlowers; i++) {
-        var prtcl = pointFlower.particles[i];
-        pointFlower.dataArray[ipos] = prtcl.position[0];
-        pointFlower.dataArray[ipos + 1] = prtcl.position[1];
-        pointFlower.dataArray[ipos + 2] = prtcl.position[2];
-        ipos += 3;
-        pointFlower.dataArray[ieuler] = prtcl.euler[0];
-        pointFlower.dataArray[ieuler + 1] = prtcl.euler[1];
-        pointFlower.dataArray[ieuler + 2] = prtcl.euler[2];
-        ieuler += 3;
-        pointFlower.dataArray[imisc] = prtcl.size;
-        pointFlower.dataArray[imisc + 1] = prtcl.alpha;
-        imisc += 2;
-    }
-    
-    //draw
-    gl.enable(gl.BLEND);
-    //gl.disable(gl.DEPTH_TEST);
-    gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
-    
-    var prog = pointFlower.program;
-    useShader(prog);
-    
-    gl.uniformMatrix4fv(prog.uniforms.uProjection, false, projection.matrix);
-    gl.uniformMatrix4fv(prog.uniforms.uModelview, false, camera.matrix);
-    gl.uniform3fv(prog.uniforms.uResolution, renderSpec.array);
-    gl.uniform3fv(prog.uniforms.uDOF, Vector3.arrayForm(camera.dof));
-    gl.uniform3fv(prog.uniforms.uFade, Vector3.arrayForm(pointFlower.fader));
-    
-    gl.bindBuffer(gl.ARRAY_BUFFER, pointFlower.buffer);
-    gl.bufferData(gl.ARRAY_BUFFER, pointFlower.dataArray, gl.DYNAMIC_DRAW);
-    
-    gl.vertexAttribPointer(prog.attributes.aPosition, 3, gl.FLOAT, false, 0, pointFlower.positionArrayOffset * Float32Array.BYTES_PER_ELEMENT);
-    gl.vertexAttribPointer(prog.attributes.aEuler, 3, gl.FLOAT, false, 0, pointFlower.eulerArrayOffset * Float32Array.BYTES_PER_ELEMENT);
-    gl.vertexAttribPointer(prog.attributes.aMisc, 2, gl.FLOAT, false, 0, pointFlower.miscArrayOffset * Float32Array.BYTES_PER_ELEMENT);
-    
-    // doubler
-    for(var i = 1; i < 2; i++) {
-        var zpos = i * -2.0;
-        pointFlower.offset[0] = pointFlower.area.x * -1.0;
-        pointFlower.offset[1] = pointFlower.area.y * -1.0;
-        pointFlower.offset[2] = pointFlower.area.z * zpos;
-        gl.uniform3fv(prog.uniforms.uOffset, pointFlower.offset);
-        gl.drawArrays(gl.POINT, 0, pointFlower.numFlowers);
-        
-        pointFlower.offset[0] = pointFlower.area.x * -1.0;
-        pointFlower.offset[1] = pointFlower.area.y *  1.0;
-        pointFlower.offset[2] = pointFlower.area.z * zpos;
-        gl.uniform3fv(prog.uniforms.uOffset, pointFlower.offset);
-        gl.drawArrays(gl.POINT, 0, pointFlower.numFlowers);
-        
-        pointFlower.offset[0] = pointFlower.area.x *  1.0;
-        pointFlower.offset[1] = pointFlower.area.y * -1.0;
-        pointFlower.offset[2] = pointFlower.area.z * zpos;
-        gl.uniform3fv(prog.uniforms.uOffset, pointFlower.offset);
-        gl.drawArrays(gl.POINT, 0, pointFlower.numFlowers);
-        
-        pointFlower.offset[0] = pointFlower.area.x *  1.0;
-        pointFlower.offset[1] = pointFlower.area.y *  1.0;
-        pointFlower.offset[2] = pointFlower.area.z * zpos;
-        gl.uniform3fv(prog.uniforms.uOffset, pointFlower.offset);
-        gl.drawArrays(gl.POINT, 0, pointFlower.numFlowers);
-    }
-    
-    //main
-    pointFlower.offset[0] = 0.0;
-    pointFlower.offset[1] = 0.0;
-    pointFlower.offset[2] = 0.0;
-    gl.uniform3fv(prog.uniforms.uOffset, pointFlower.offset);
-    gl.drawArrays(gl.POINT, 0, pointFlower.numFlowers);
-    
-    gl.bindBuffer(gl.ARRAY_BUFFER, null);
-    unuseShader(prog);
-    
-    gl.enable(gl.DEPTH_TEST);
-    gl.disable(gl.BLEND);
-}
-
-// effects
-//common util
-function createEffectProgram(vtxsrc, frgsrc, exunifs, exattrs) {
-    var ret = {};
-    var unifs = ['uResolution', 'uSrc', 'uDelta'];
-    if(exunifs) {
-        unifs = unifs.concat(exunifs);
-    }
-    var attrs = ['aPosition'];
-    if(exattrs) {
-        attrs = attrs.concat(exattrs);
-    }
-    
-    ret.program = createShader(vtxsrc, frgsrc, unifs, attrs);
-    useShader(ret.program);
-    
-    ret.dataArray = new Float32Array([
-        -1.0, -1.0,
-         1.0, -1.0,
-        -1.0,  1.0,
-         1.0,  1.0
-    ]);
-    ret.buffer = gl.createBuffer();
-    gl.bindBuffer(gl.ARRAY_BUFFER, ret.buffer);
-    gl.bufferData(gl.ARRAY_BUFFER, ret.dataArray, gl.STATIC_DRAW);
-    
-    gl.bindBuffer(gl.ARRAY_BUFFER, null);
-    unuseShader(ret.program);
-    
-    return ret;
-}
-
-// basic usage
-// useEffect(prog, srctex({'texture':texid, 'dtxArray':(f32)[dtx, dty]})); //basic initialize
-// gl.uniform**(...); //additional uniforms
-// drawEffect()
-// unuseEffect(prog)
-// TEXTURE0 makes src
-function useEffect(fxobj, srctex) {
-    var prog = fxobj.program;
-    useShader(prog);
-    gl.uniform3fv(prog.uniforms.uResolution, renderSpec.array);
-    
-    if(srctex != null) {
-        gl.uniform2fv(prog.uniforms.uDelta, srctex.dtxArray);
-        gl.uniform1i(prog.uniforms.uSrc, 0);
-        
-        gl.activeTexture(gl.TEXTURE0);
-        gl.bindTexture(gl.TEXTURE_2D, srctex.texture);
-    }
-}
-function drawEffect(fxobj) {
-    gl.bindBuffer(gl.ARRAY_BUFFER, fxobj.buffer);
-    gl.vertexAttribPointer(fxobj.program.attributes.aPosition, 2, gl.FLOAT, false, 0, 0);
-    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
-}
-function unuseEffect(fxobj) {
-    unuseShader(fxobj.program);
-}
-
-var effectLib = {};
-function createEffectLib() {
-    
-    var vtxsrc, frgsrc;
-    //common
-    var cmnvtxsrc = document.getElementById("fx_common_vsh").textContent;
-    
-    //background
-    frgsrc = document.getElementById("bg_fsh").textContent;
-    effectLib.sceneBg = createEffectProgram(cmnvtxsrc, frgsrc, ['uTimes'], null);
-    
-    // make brightpixels buffer
-    frgsrc = document.getElementById("fx_brightbuf_fsh").textContent;
-    effectLib.mkBrightBuf = createEffectProgram(cmnvtxsrc, frgsrc, null, null);
-    
-    // direction blur
-    frgsrc = document.getElementById("fx_dirblur_r4_fsh").textContent;
-    effectLib.dirBlur = createEffectProgram(cmnvtxsrc, frgsrc, ['uBlurDir'], null);
-    
-    //final composite
-    vtxsrc = document.getElementById("pp_final_vsh").textContent;
-    frgsrc = document.getElementById("pp_final_fsh").textContent;
-    effectLib.finalComp = createEffectProgram(vtxsrc, frgsrc, ['uBloom'], null);
-}
-
-// background
-function createBackground() {
-    //console.log("create background");
-}
-function initBackground() {
-    //console.log("init background");
-}
-function renderBackground() {
-    gl.disable(gl.DEPTH_TEST);
-    
-    useEffect(effectLib.sceneBg, null);
-    gl.uniform2f(effectLib.sceneBg.program.uniforms.uTimes, timeInfo.elapsed, timeInfo.delta);
-    drawEffect(effectLib.sceneBg);
-    unuseEffect(effectLib.sceneBg);
-    
-    gl.enable(gl.DEPTH_TEST);
-}
-
-// post process
-var postProcess = {};
-function createPostProcess() {
-    //console.log("create post process");
-}
-function initPostProcess() {
-    //console.log("init post process");
-}
-
-function renderPostProcess() {
-    gl.enable(gl.TEXTURE_2D);
-    gl.disable(gl.DEPTH_TEST);
-    var bindRT = function (rt, isclear) {
-        gl.bindFramebuffer(gl.FRAMEBUFFER, rt.frameBuffer);
-        gl.viewport(0, 0, rt.width, rt.height);
-        if(isclear) {
-            gl.clearColor(0, 0, 0, 0);
-            gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
-        }
-    };
-    
-    //make bright buff
-    bindRT(renderSpec.wHalfRT0, true);
-    useEffect(effectLib.mkBrightBuf, renderSpec.mainRT);
-    drawEffect(effectLib.mkBrightBuf);
-    unuseEffect(effectLib.mkBrightBuf);
-    
-    // make bloom
-    for(var i = 0; i < 2; i++) {
-        var p = 1.5 + 1 * i;
-        var s = 2.0 + 1 * i;
-        bindRT(renderSpec.wHalfRT1, true);
-        useEffect(effectLib.dirBlur, renderSpec.wHalfRT0);
-        gl.uniform4f(effectLib.dirBlur.program.uniforms.uBlurDir, p, 0.0, s, 0.0);
-        drawEffect(effectLib.dirBlur);
-        unuseEffect(effectLib.dirBlur);
-        
-        bindRT(renderSpec.wHalfRT0, true);
-        useEffect(effectLib.dirBlur, renderSpec.wHalfRT1);
-        gl.uniform4f(effectLib.dirBlur.program.uniforms.uBlurDir, 0.0, p, 0.0, s);
-        drawEffect(effectLib.dirBlur);
-        unuseEffect(effectLib.dirBlur);
-    }
-    
-    //display
-    gl.bindFramebuffer(gl.FRAMEBUFFER, null);
-    gl.viewport(0, 0, renderSpec.width, renderSpec.height);
-    gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
-    
-    useEffect(effectLib.finalComp, renderSpec.mainRT);
-    gl.uniform1i(effectLib.finalComp.program.uniforms.uBloom, 1);
-    gl.activeTexture(gl.TEXTURE1);
-    gl.bindTexture(gl.TEXTURE_2D, renderSpec.wHalfRT0.texture);
-    drawEffect(effectLib.finalComp);
-    unuseEffect(effectLib.finalComp);
-    
-    gl.enable(gl.DEPTH_TEST);
-}
-
-/////
-var SceneEnv = {};
-function createScene() {
-    createEffectLib();
-    createBackground();
-    createPointFlowers();
-    createPostProcess();
-    sceneStandBy = true;
-}
-
-function initScene() {
-    initBackground();
-    initPointFlowers();
-    initPostProcess();
-    
-    //camera.position.z = 17.320508;
-    camera.position.z = pointFlower.area.z + projection.nearfar[0];
-    projection.angle = Math.atan2(pointFlower.area.y, camera.position.z + pointFlower.area.z) * 180.0 / Math.PI * 2.0;
-    Matrix44.loadProjection(projection.matrix, renderSpec.aspect, projection.angle, projection.nearfar[0], projection.nearfar[1]);
-}
-
-function renderScene() {
-    //draw
-    Matrix44.loadLookAt(camera.matrix, camera.position, camera.lookat, camera.up);
-    
-    gl.enable(gl.DEPTH_TEST);
-    
-    //gl.bindFramebuffer(gl.FRAMEBUFFER, null);
-    gl.bindFramebuffer(gl.FRAMEBUFFER, renderSpec.mainRT.frameBuffer);
-    gl.viewport(0, 0, renderSpec.mainRT.width, renderSpec.mainRT.height);
-    gl.clearColor(0.005, 0, 0.05, 0);
-    gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
-    
-    renderBackground();
-    renderPointFlowers();
-    renderPostProcess();
-}
-
-/////
-function onResize(e) {
-    makeCanvasFullScreen(document.getElementById("sakura"));
-    setViewports();
-    if(sceneStandBy) {
-        initScene();
-    }
-}
-
-function setViewports() {
-    renderSpec.setSize(gl.canvas.width, gl.canvas.height);
-    
-    gl.clearColor(0.2, 0.2, 0.5, 1.0);
-    gl.viewport(0, 0, renderSpec.width, renderSpec.height);
-    
-    var rtfunc = function (rtname, rtw, rth) {
-        var rt = renderSpec[rtname];
-        if(rt) deleteRenderTarget(rt);
-        renderSpec[rtname] = createRenderTarget(rtw, rth);
-    };
-    rtfunc('mainRT', renderSpec.width, renderSpec.height);
-    rtfunc('wFullRT0', renderSpec.width, renderSpec.height);
-    rtfunc('wFullRT1', renderSpec.width, renderSpec.height);
-    rtfunc('wHalfRT0', renderSpec.halfWidth, renderSpec.halfHeight);
-    rtfunc('wHalfRT1', renderSpec.halfWidth, renderSpec.halfHeight);
-}
-
-function render() {
-    renderScene();
-}
-
-var animating = true;
-function toggleAnimation(elm) {
-    animating ^= true;
-    if(animating) animate();
-    if(elm) {
-        elm.innerHTML = animating? "Stop":"Start";
-    }
-}
-
-function stepAnimation() {
-    if(!animating) animate();
-}
-
-function animate() {
-    var curdate = new Date();
-    timeInfo.elapsed = (curdate - timeInfo.start) / 1000.0;
-    timeInfo.delta = (curdate - timeInfo.prev) / 1000.0;
-    timeInfo.prev = curdate;
-    
-    if(animating) requestAnimationFrame(animate);
-    render();
-}
-
-function makeCanvasFullScreen(canvas) {
-    var b = document.body;
-	var d = document.documentElement;
-	fullw = Math.max(b.clientWidth , b.scrollWidth, d.scrollWidth, d.clientWidth);
-	fullh = Math.max(b.clientHeight , b.scrollHeight, d.scrollHeight, d.clientHeight);
-	canvas.width = fullw;
-	canvas.height = fullh;
-}
-
-window.addEventListener('load', function(e) {
-    var canvas = document.getElementById("sakura");
-    try {
-        makeCanvasFullScreen(canvas);
-        gl = canvas.getContext('experimental-webgl');
-    } catch(e) {
-        alert("WebGL not supported." + e);
-        console.error(e);
-        return;
-    }
-    
-    window.addEventListener('resize', onResize);
-    
-    setViewports();
-    createScene();
-    initScene();
-    
-    timeInfo.start = new Date();
-    timeInfo.prev = timeInfo.start;
-    animate();
-});
-
-//set window.requestAnimationFrame
-(function (w, r) {
-    w['r'+r] = w['r'+r] || w['webkitR'+r] || w['mozR'+r] || w['msR'+r] || w['oR'+r] || function(c){ w.setTimeout(c, 1000 / 60); };
-})(window, 'equestAnimationFrame');
-</script>
-<script type="text/javascript">
-	(function(){
-	  var animenuToggle = document.querySelector('.animenu__toggle'),
-		  animenuNav    = document.querySelector('.animenu__nav'),
-		  hasClass = function( elem, className ) {
-			return new RegExp( ' ' + className + ' ' ).test( ' ' + elem.className + ' ' );
-		  },
-		  toggleClass = function( elem, className ) {
-			var newClass = ' ' + elem.className.replace( /[\t\r\n]/g, ' ' ) + ' ';
-			if( hasClass(elem, className ) ) {
-			  while( newClass.indexOf( ' ' + className + ' ' ) >= 0 ) {
-				newClass = newClass.replace( ' ' + className + ' ' , ' ' );
-			  }
-			  elem.className = newClass.replace( /^\s+|\s+$/g, '' );
-			} else {
-			  elem.className += ' ' + className;
-			}
-		  },           
-		  animenuToggleNav =  function (){        
-			toggleClass(animenuToggle, "animenu__toggle--active");
-			toggleClass(animenuNav, "animenu__nav--open");        
-		  }
-
-	  if (!animenuToggle.addEventListener) {
-		  animenuToggle.attachEvent("onclick", animenuToggleNav);
-	  }
-	  else {
-		  animenuToggle.addEventListener('click', animenuToggleNav);
-	  }
-	})()
-</script>
-
- 
+</body>
 </html>
+
