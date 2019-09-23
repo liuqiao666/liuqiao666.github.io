@@ -177,8 +177,8 @@ $(function() {
 	w.load("<h1 class='writecode'>联系我</h1>");
 	w.load("<ul>");
 	w.load("<li class='writecode'>mail:1255394075@qq.com</li>");
-	w.load("<li class='writecode'>blog:<a href='http://blog.youlunshidai.com' target='_blank'>http://loveqiao.top</a></li>");
-	w.load("<li class='writecode'>github:<a href='https://github.com/ccfromstar' target='_blank'>https://github.com/liuqiao666</a></li>");
+	w.load("<li class='writecode'>blog:<a href='http://loveqiao.top' target='_blank'>http://loveqiao.top</a></li>");
+	w.load("<li class='writecode'>github:<a href='https://github.com/liuqiao666' target='_blank'>https://github.com/liuqiao666</a></li>");
 	w.load("</ul>");
 	w.load("<h1 class='writecode'>技能</h1>");
 	w.load("<ul>");
