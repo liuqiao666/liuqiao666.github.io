@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <title>morly-VIP视频资源在线解析</title>
+	<meta name="keywords" content="morly-VIP视频资源在线解析"/>
+    <meta name="description" content="morly-VIP视频资源在线解析"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+    <div id="main">
+        <div class="header clearfix">
+            <h1>—— morly-VIP视频资源在线解析 ——</h1>
+       </div>
+	<div class="header cats">
+	       <h2>输入视频地址，享免VIP播放</h2>
+	</div>
+            <div id="menu">
+            <ul id="playpanel" class="list tip clearfix">
+                <select id="api"></select>
+                <input id="url" type="text" placeholder="输入完整视频网址，包含：http:">
+                <button id="play" onclick="play();">点击播放</button>
+            </ul>         
+        </div>
+        
+             <ul id="player" class="list table">
+            <div class="body">
+                <p>输入视频地址</p>
+                <p>如当前腾讯视频需要付费观看的“愤怒的小鸟”</p>
+                <p>https://v.qq.com/x/cover/rk4a9f0ho37siky.html</p>
+                <p>点击播放，即可</p>
+                <p>不保证接口实时可用</p>
+                <p>播放失败请多点几次播放，或切换接口</p>
+                <a href="http://loveqiao.top/" style="color: #0099E5;"><p>返回博客主页</p></a>
+            </div>
+        </ul>	   
+        <div id="foot">
+            <div class="header footer">
+			
+                <h3>—— 提 示 牌 ——</h3>
+                <p><span>解析接口收集自互联网，仅供学习交流，请勿用于商业</span></p>
+				<p><span>&copy;2018-2019  All Right Reserved.</span></p><a href="http://loveqiao.top/" style="color:red;">&copy;morly_blog</a>  版权所有
+            </div>
+			
+        </div>
+
+    </div>
+    <script>
+        var data = [
+                {name:"线 路 1",url:"https:jx.618g.com/?url="},
+                {name:"线 路 2",url:"https:www.cmys.tv/?url="},
+                {name:"线 路 3",url:"https:jqaaa.com/jx.php?url="},
+                {name:"线 路 4",url:"https:1717ty.duapp.com/ty.php?url="},
+                {name:"线 路 5",url:"https:jiexi.071811.cc/jx2.php?url="},
+                {name:"线 路 6",url:"https:ejiafarm.com/dy/jiexi.php?url="},
+                {name:"线 路 7",url:"https:beaacc.com/api.php?url="},
+                {name:"线 路 8",url:"https:api.fastflv.cc/jiexi/?url="},
+                {name:"线 路 9",url:"https:j.88gc.net/jx/?url="},
+                {name:"线 路 10",url:"http:ku.kuuhui.com/plje?id="},
+				{name:"线 路 11",url:"http://jx.aeidu.cn/9.php?url="},
+				{name:"线 路 12",url:"http://jx.aeidu.cn/index.php?url="},
+				{name:"线 路 13",url:"http://jx.aeidu.cn/7.php?url="},
+				{name:"线 路 14",url:"http://jx.aeidu.cn/6.php?url="},
+				{name:"线 路 15",url:"http://jx.aeidu.cn/5.php?url="},
+				{name:"线 路 16",url:"http://jx.598110.com/?url="},
+				{name:"线 路 17",url:"http://jx.aeidu.cn/3.php?url="},
+				{name:"线 路 18",url:"http://jx.618ge.com/?url="},
+				{name:"线 路 19",url:"http://jx.aeidu.cn/index.php?url="},
+				{name:"线 路 20",url:"http://jx.ovov.cc/?url="},
+				{name:"线 路 21",url:"http://jqaaa.com/jx.php?url="},
+				{name:"线 路 22",url:"http://vip.jlsprh.com/?url="},
+				{name:"线 路 23",url:"http://jx.aeidu.cn/index.php?url="},
+				{name:"线 路 24",url:"http://jiexi.92fz.cn/player/vip.php?url="},
+				{name:"线 路 25",url:"http://api.nepian.com/ckparse/?url="},
+				{name:"线 路 26",url:"http://aikan-tv.com/?url="},
+				{name:"线 路 27",url:"http://j.zz22x.com/jx/?url="},
+				{name:"线 路 28",url:"http://www.efunfilm.com/yunparse/index.php?url="},
+				{name:"线 路 29",url:"https://api.flvsp.com/?url="},
+				{name:"线 路 30",url:"http://api.xfsub.com/index.php?url="},
+				{name:"线 路 31",url:"http://api.47ks.com/webcloud/?v="},
+				{name:"线 路 32",url:"http://player.jidiaose.com/supapi/iframe.php?v="},
+				{name:"线 路 33",url:"http://jqaaa.com/jx.php?url="},
+				{name:"线 路 34",url:"http://www.662820.com/xnflv/index.php?url="},
+				{name:"线 路 35",url:"http://jiexi.92fz.cn/player/vip.php?url="},
+				{name:"线 路 36",url:"http://www.662820.com/xnflv/index.php?url="},
+				{name:"线 路 37",url:"http://api.91exp.com/svip/?url="},
+				{name:"线 路 38",url:"http://vip.thxcw.com/index.php?url="},
+				{name:"线 路 39",url:"http://www.82190555.com/index/qqvod.php?url="},
+				{name:"线 路 40",url:"http://api.pucms.com/?url="},
+				{name:"线 路 41",url:"http://api.baiyug.cn/vip/index.php?url="},
+				{name:"线 路 42",url:"https://api.flvsp.com/?url="},
+				{name:"线 路 43",url:"http://api.xfsub.com/index.php?url="},
+				{name:"线 路 44",url:"http://65yw.2m.vc/chaojikan.php?url="},
+				{name:"线 路 45",url:"http://www.82190555.com/index/qqvod.php?url="},
+				{name:"线 路 46",url:"http://vip.jlsprh.com/index.php?url="},
+				{name:"线 路 47",url:"http://2gty.com/apiurl/yun.php?url="},
+				{name:"线 路 48",url:"http://player.jidiaose.com/supapi/iframe.php?v="},
+				{name:"线 路 49",url:"http://www.662820.com/xnflv/index.php?url="},
+				{name:"线 路 50",url:"http://y.mt2t.com/lines?url="},
+				{name:"线 路 51",url:"http://api.pucms.com/?url="},
+				{name:"线 路 52",url:"http://www.662820.com/xnflv/index.php?url="},
+				{name:"线 路 53",url:"http://y.mt2t.com/lines?url="},
+				{name:"线 路 54",url:"http://vip.jlsprh.com/index.php?url="},
+				{name:"线 路 55",url:"http://api.pucms.com/?url="},
+				{name:"线 路 56",url:"http://api.52xmw.com/?url="},
+				{name:"线 路 57",url:"http://vip.jlsprh.com/index.php?url="},
+				{name:"线 路 58",url:"http://api.wlzhan.com/sudu/?url="},
+				{name:"线 路 59",url:"http://www.82190555.com/index/qqvod.php?url="},
+				{name:"线 路 60",url:"http://api.baiyug.cn/vip/index.php?url="},
+				{name:"线 路 61",url:"http://000o.cc/jx/ty.php?url="},
+				{name:"线 路 62",url:"http://www.wmxz.wang/video.php?url="},
+				{name:"线 路 63",url:"http://yun.zihu.tv/play.html?url="},
+				{name:"线 路 64",url:"http://www.vipjiexi.com/yun.php?url="},
+				{name:"线 路 65",url:"https://jxapi.nepian.com/ckparse/?url="},
+				{name:"线 路 66",url:"http://2gty.com/apiurl/yun.php?url="},
+		//		api格式：{name:"线路名称",url:"接口地址"}, 可自行修改和添加
+                ];
+        for (var i in  data){
+            var opt = document.createElement ("option");
+            opt.value = data[i].url;
+            opt.innerText = data[i].name;
+            document.getElementById("api").appendChild (opt);
+        }
+        function play(){
+            var url = document.getElementById("url").value;
+            if(url.indexOf('http') == -1){  
+                alert('视频地址不正确！');return;
+            }
+            var api = document.getElementById("api").value;
+            url = api + url;
+            document.getElementById("player").innerHTML='<iframe marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="0" allowfullscreen="true" scrolling="no" height="100%" width="100%" src="'+url+'"></iframe>';
+        }
+    </script>
+
+</body>
+</html>
