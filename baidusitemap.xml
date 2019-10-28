@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://www.fullcircles.ch/dzl/</loc>
+    <lastmod>2019-10-28T11:41:46.080Z</lastmod>
+  </url>  <url>
+    <loc>http://www.fullcircles.ch/seo6/</loc>
+    <lastmod>2019-10-28T10:56:47.869Z</lastmod>
+  </url>  <url>
+    <loc>http://www.fullcircles.ch/seo5/</loc>
+    <lastmod>2019-10-28T10:56:43.112Z</lastmod>
+  </url>  <url>
+    <loc>http://www.fullcircles.ch/seo4/</loc>
+    <lastmod>2019-10-28T10:56:37.766Z</lastmod>
+  </url>  <url>
+    <loc>http://www.fullcircles.ch/seo3/</loc>
+    <lastmod>2019-10-28T10:56:33.079Z</lastmod>
+  </url>  <url>
+    <loc>http://www.fullcircles.ch/seo2/</loc>
+    <lastmod>2019-10-28T10:56:28.703Z</lastmod>
+  </url>  <url>
+    <loc>http://www.fullcircles.ch/seo/</loc>
+    <lastmod>2019-10-28T10:56:20.829Z</lastmod>
+  </url>  <url>
     <loc>http://www.fullcircles.ch/zbei/</loc>
     <lastmod>2019-08-16T13:05:44.603Z</lastmod>
   </url>  <url>
@@ -48,23 +69,5 @@
   </url>  <url>
     <loc>http://www.fullcircles.ch/cat/</loc>
     <lastmod>2019-08-16T12:37:17.260Z</lastmod>
-  </url>  <url>
-    <loc>http://www.fullcircles.ch/seo6/</loc>
-    <lastmod>2019-06-03T13:58:27.281Z</lastmod>
-  </url>  <url>
-    <loc>http://www.fullcircles.ch/seo5/</loc>
-    <lastmod>2019-06-03T13:58:18.010Z</lastmod>
-  </url>  <url>
-    <loc>http://www.fullcircles.ch/seo4/</loc>
-    <lastmod>2019-06-03T13:58:08.217Z</lastmod>
-  </url>  <url>
-    <loc>http://www.fullcircles.ch/seo3/</loc>
-    <lastmod>2019-06-03T13:57:57.885Z</lastmod>
-  </url>  <url>
-    <loc>http://www.fullcircles.ch/seo2/</loc>
-    <lastmod>2019-06-03T13:57:45.038Z</lastmod>
-  </url>  <url>
-    <loc>http://www.fullcircles.ch/seo/</loc>
-    <lastmod>2019-06-03T13:57:34.827Z</lastmod>
   </url>
 </urlset>
