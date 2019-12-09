@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.fullcircles.ch/cp2/</loc>
+    
+    <lastmod>2019-12-09T13:47:10.125Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.fullcircles.ch/cp1/</loc>
     
-    <lastmod>2019-12-08T10:46:26.617Z</lastmod>
+    <lastmod>2019-12-09T12:23:23.579Z</lastmod>
     
   </url>
   
@@ -191,14 +198,14 @@
   </url>
   
   <url>
-    <loc>http://www.fullcircles.ch/photos/index.html</loc>
+    <loc>http://www.fullcircles.ch/photos/data.json</loc>
     
     <lastmod>2019-07-18T14:49:04.076Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.fullcircles.ch/photos/data.json</loc>
+    <loc>http://www.fullcircles.ch/photos/index.html</loc>
     
     <lastmod>2019-07-18T14:49:04.076Z</lastmod>
     
