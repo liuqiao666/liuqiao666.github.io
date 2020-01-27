@@ -1,0 +1,213 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>武汉加油</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="format-detection" content="telephone=no" />
+  <link rel="stylesheet" href="https://static.itv.cctv.com/2020whjy/css/index2.css?98">
+</head>
+<body>
+	
+	<div class="main">
+		<div class="block"></div>
+		<div class="title"></div>
+		<div class="center">
+
+			<div class="c_head mb34">
+				<div class="c_h_k jiayou1"></div>
+				<img class="default" src="https://static.itv.cctv.com/2020whjy/img/head.png" alt="">
+			</div>
+			<div class="c_head mb34">
+				<div class="c_h_k jiayou2"></div>
+				<img class="default" src="https://static.itv.cctv.com/2020whjy/img/head.png" alt="">
+			</div>
+			<div class="c_head mb34">
+				<div class="c_h_k jiayou3"></div>
+				<img class="default" src="https://static.itv.cctv.com/2020whjy/img/head.png" alt="">
+			</div>
+			<div class="c_head">
+				<div class="c_h_k jiayou4"></div>
+				<img class="default" src="https://static.itv.cctv.com/2020whjy/img/head.png" alt="">
+			</div>
+			<div class="c_head">
+				<div class="c_h_k jiayou5"></div>
+				<img class="default" src="https://static.itv.cctv.com/2020whjy/img/head.png" alt="">
+			</div>
+			<div class="c_head">
+				<div class="c_h_k jiayou6"></div>
+				<img class="default" src="https://static.itv.cctv.com/2020whjy/img/head.png" alt="">
+			</div>
+
+		</div>
+
+		<div class="btn huoqu" style="display: none;">获取头像</div>
+		<div class="makeimg" style="display: none;color: #fff;font-weight: 700">点击选择头像</div>
+		<div class="logo">
+			<div style="font-family: '微软雅黑';font-size: 14px;color: white;font-weight: 500;text-align: center;">
+				更多精彩内容<br>请关注微信公众号<b>“往生路”</b>
+			</div>
+		</div>
+
+	</div>
+
+	<div id="canvas-wrap">
+		<div class="head2">
+			<img class="tb jiayou1" src="https://static.itv.cctv.com/2020whjy/img/jiayou1.png?66">
+			<img class="tb jiayou2" src="https://static.itv.cctv.com/2020whjy/img/jiayou7.png?66">
+			<img class="tb jiayou3" src="https://static.itv.cctv.com/2020whjy/img/jiayou8.png?66">
+			<img class="tb jiayou4" src="https://static.itv.cctv.com/2020whjy/img/jiayou4.png?66">
+			<img class="tb jiayou5" src="https://static.itv.cctv.com/2020whjy/img/jiayou5.png?66">
+			<img class="tb jiayou6" src="https://static.itv.cctv.com/2020whjy/img/jiayou6.png?66">
+			<img class="default" src="https://static.itv.cctv.com/2020whjy/img/head.png" alt="">
+		</div>
+	</div>
+
+	<div class="mask">
+		<div class="wh">
+			<div class="tips">
+				<div class="mask_title">制作成功</div>
+				<div class="newimg">
+					<img src="" id="wuhanjiayou">
+				</div>
+				<div class="changan">长按保存头像</div>
+			</div>
+			<div class="btn mask_btn">重新选择</div>
+		</div>
+	</div>
+
+</body>
+<script src="https://static.itv.cctv.com/2020whjy/js/jquery.js"></script>
+<script src="https://static.itv.cctv.com/2020whjy/js/html2canvas.min.js"></script>
+<script src="https://static.itv.cctv.com/qr/js/libs/seajs/sea.js"></script>
+<script src="https://static.itv.cctv.com/qr/js/seainit.js?v=20200117"></script>
+<script>
+$(function(){
+		seajs.use(['jquery','publicf'], function ($, publicf) {
+
+		var sharedata = {
+	      title:'众志成城抗疫情，定制头像表态度。',
+	      contents: '定制你的头像，表达你的态度，武汉加油！中国加油！',
+	      pic: 'https://static.itv.cctv.com/2020whjy/img/share.png?1024',
+	      link: 'https://itv.cctv.com/html/2020whjy/index.html',
+	      wxMasking: false,
+	  };
+
+	  publicf.ShareQr(sharedata, false, true);
+
+	  var headimg='';
+
+		var arr = location.search.substr(1).split('&');//数组
+		var tp={};
+		$.each(arr,function(i,ele){
+		  var item=ele.split('=');
+		  tp[item[0]]=item[1]?item[1]:null;
+		})
+		if(tp.openid){
+			$('.huoqu').hide();
+			$('.makeimg').show();
+			if(tp.avatar==null){
+				headimg='https://static.itv.cctv.com/2020whjy/img/head.png';
+			}else{
+				if(tp.avatar.length>0){
+					headimg=decodeURIComponent(tp.avatar);
+					headimg=headimg.slice(0,-3)+'0';
+				} else{
+					headimg='https://static.itv.cctv.com/2020whjy/img/head.png';
+				}
+			}
+			localStorage.setItem('avatar',headimg)
+			$('.default').attr('src',headimg);
+		}else{
+			$('.makeimg').hide();
+			$('.huoqu').show();
+		  $('.main').click(function(){
+				location.href='https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx32e75852e0db1506&redirect_uri=https%3A%2F%2Fopen.itv.cctv.com%2Foauth%2Fwx%2Fchangeheader%2F35&response_type=code&scope=snsapi_userinfo&state=first#wechat_redirect';
+				// location.href='https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx32e75852e0db1506&redirect_uri=https%3A%2F%2Fopen.itv.cctv.com%2Foauth%2Fwx%2Fchangeheader%2F35&response_type=code&scope=snsapi_userinfo&state=second#wechat_redirect';
+		  })
+		  $('.huoqu').click(function(){
+				location.href='https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx32e75852e0db1506&redirect_uri=https%3A%2F%2Fopen.itv.cctv.com%2Foauth%2Fwx%2Fchangeheader%2F35&response_type=code&scope=snsapi_userinfo&state=first#wechat_redirect';
+				// location.href='https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx32e75852e0db1506&redirect_uri=https%3A%2F%2Fopen.itv.cctv.com%2Foauth%2Fwx%2Fchangeheader%2F35&response_type=code&scope=snsapi_userinfo&state=second#wechat_redirect';
+		  })
+		}
+
+
+	  $('.mask_btn').click(function(){
+	  	$('.mask').hide();
+	  })
+
+	  $('.c_head').click(function(){
+	  	if(headimg.length==0){
+	  		return;
+	  	}
+    	$('.tb').hide();
+    	$('.tb').eq($(this).index()).show();
+      var domElement = document.querySelector('#canvas-wrap');
+      var canvasContent = domElement;//需要截图的包裹的（原生的）DOM对象
+
+      var cwidth = canvasContent.offsetWidth;//获取dom宽度
+      var cheight = canvasContent.offsetHeight;//获取dom高度
+
+      var canvas = document.createElement('canvas');//创建一个canvas节点
+      var scale = 2 //定义任意放大倍数，支持小数
+      canvas.width = cwidth*scale;//定义canvas宽度*缩放
+      canvas.height = cheight*scale;//定义canvas高度*缩放
+      canvas.getContext("2d").scale(scale, scale); //获取context,设置scale
+      
+      var opts = {
+          scale: scale, // 添加的scale 参数
+          canvas: canvas, //自定义 canvas
+          logging: false, //日志开关，便于查看html2canvas的内部执行流程
+          width: cwidth, //dom 原始宽度
+          height: cheight,
+          useCORS: true // 【重要】开启跨域配置,
+      }
+      
+      html2canvas(canvasContent,opts).then(function(canvas){
+          var context = canvas.getContext('2d');
+          // 【重要】关闭抗锯齿
+          context.mozImageSmoothingEnabled = false;
+          context.webkitImageSmoothingEnabled = false;
+          context.msImageSmoothingEnabled = false;
+          context.imageSmoothingEnabled = false;
+
+          var newurl=canvas.toDataURL("jpg/jpeg", 1.0);
+          $('#wuhanjiayou').attr('src',newurl)
+          $('.mask').show();
+      });
+	  })
+
+
+	})
+})
+
+
+
+
+</script>
+<script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?03461cc6d4b1a850f6aa16bb93345dd4";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+
+    with (document)
+      with (body)
+        with (insertBefore(createElement("script"), firstChild))
+          setAttribute(
+            "exparams",
+            "v_id=&aplus",
+            (id = "tb-beacon-aplus"),
+            (src =
+              (location > "https" ? "//js" : "//js") +
+              ".data.cctv.com/__aplus_plugin_cctv.js,aplus_plugin_aplus_u.js")
+          );
+  })();
+</script>
+
+</html>
