@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.fullcircles.ch/products07/</loc>
+    
+    <lastmod>2020-07-25T04:44:30.744Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.fullcircles.ch/products06/</loc>
     
     <lastmod>2020-07-25T04:24:45.370Z</lastmod>
@@ -275,14 +282,14 @@
   </url>
   
   <url>
-    <loc>http://www.fullcircles.ch/photos/index.html</loc>
+    <loc>http://www.fullcircles.ch/photos/data.json</loc>
     
     <lastmod>2019-07-18T14:49:04.076Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.fullcircles.ch/photos/data.json</loc>
+    <loc>http://www.fullcircles.ch/photos/index.html</loc>
     
     <lastmod>2019-07-18T14:49:04.076Z</lastmod>
     
